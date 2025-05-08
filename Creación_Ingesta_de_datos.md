@@ -1,69 +1,41 @@
 import requests
+import datetime
 import random
-from datetime import datetime, timedelta
 
-# Configuración
-ORION_URL = "http://localhost:1026/v2/op/update"
 HEADERS = {
     "Content-Type": "application/json",
-    "Fiware-Service": "default",
+    "Fiware-Service": "smartcity",
     "Fiware-ServicePath": "/"
 }
 
-# Entidades
-entities = [
-    {"id": "sensor001", "type": "Sensor", "attrs": ["humidity", "temperatura"]},
-    {"id": "sensor002", "type": "Sensor", "attrs": ["C02"]},
-    {"id": "sensor003", "type": "Sensor", "attrs": ["Ph", "cloro", "temperatura"]}
-]
+URL = "http://localhost:1026/v2/entities/{}/attrs"
 
-# Rango de fechas
-start_date = datetime(2025, 3, 1)
-end_date = datetime(2025, 4, 30)
-total_points = 400
-time_step = (end_date - start_date) / total_points
-
-# Generar y cargar datos
-for entity in entities:
-    for i in range(total_points):
-        current_time = (start_date + i * time_step).isoformat() + "Z"
-
-        # Generar valores aleatorios por atributo
-        payload = {
-            "actionType": "append",
-            "entities": [
-                {
-                    "id": entity["id"],
-                    "type": entity["type"],
-                }
-            ]
+def send_value(entity_id, attr_name, value):
+    payload = {
+        attr_name: {
+            "value": value,
+            "type": "Number"
         }
+    }
+    r = requests.post(URL.format(entity_id), json=payload, headers=HEADERS)
+    if not r.ok:
+        print(f"Error [{r.status_code}]: {r.text}")
 
-        # Atributos específicos de la entidad
-        for attr in entity["attrs"]:
-            if attr == "humidity":
-                value = round(random.uniform(30, 90), 2)
-            elif attr == "temperatura":
-                value = round(random.uniform(15, 35), 2)
-            elif attr == "C02":
-                value = random.randint(300, 1000)
-            elif attr == "Ph":
-                value = round(random.uniform(6.5, 8.5), 2)
-            elif attr == "cloro":
-                value = round(random.uniform(0.5, 2.5), 2)
+start = datetime.datetime(2025, 3, 1)
+end = datetime.datetime(2025, 4, 30)
+delta = (end - start) / 400
 
-            # Añadir atributo y timestamp
-            payload["entities"][0][attr] = {
-                "type": "Number",
-                "value": value,
-                "metadata": {
-                    "timestamp": {
-                        "type": "DateTime",
-                        "value": current_time
-                    }
-                }
-            }
+for i in range(400):
+    ts = start + i * delta
 
-        # Enviar la actualización a Orion
-        response = requests.post(ORION_URL, json=payload, headers=HEADERS)
-        print(f"Entidad {entity['id']} ({i+1}/400) - Status: {response.status_code}")
+    # Sensor 001: humedad y temperatura
+    send_value("sensor001", "humidity", round(random.uniform(30, 70), 2))
+    send_value("sensor001", "temperatura", round(random.uniform(20, 40), 2))
+
+    # Sensor 002: CO2
+    send_value("sensor002", "C02", round(random.uniform(300, 600), 2))
+
+    # Sensor 003: Ph, cloro, temperatura
+    send_value("sensor003", "Ph", round(random.uniform(6.5, 8.5), 2))
+    send_value("sensor003", "cloro", round(random.uniform(0.5, 3.0), 2))
+    send_value("sensor003", "temperatura", round(random.uniform(20, 35), 2))
