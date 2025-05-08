@@ -1,3 +1,5 @@
+```python
+
 import requests
 import datetime
 import random
@@ -39,3 +41,4 @@ for i in range(400):
     send_value("sensor003", "Ph", round(random.uniform(6.5, 8.5), 2))
     send_value("sensor003", "cloro", round(random.uniform(0.5, 3.0), 2))
     send_value("sensor003", "temperatura", round(random.uniform(20, 35), 2))
+```
