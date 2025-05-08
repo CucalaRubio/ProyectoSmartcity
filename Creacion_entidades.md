@@ -24,7 +24,7 @@ curl -X POST \
   }'
 
   curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application/json'   -d '{
-    "id": "sensor001",
+    "id": "sensor003",
     "type": "WaterQualitySensor",
     "Ph": {
       "value": 20,
