@@ -1,5 +1,5 @@
 curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/json' -d '{"id": "sensor001", "type": "Sensor", "humidity": {"value": 55, "type": "Number"}, 
-"temperatura": { "type": "Number", "value": 30}
+"Temperatura": { "type": "Number", "value": 30}
   }'
 
   curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application/json'   -d '{
@@ -17,5 +17,5 @@ curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/jso
     "Ph": {
       "value": 20,
       "type": "Number"
-    }, "temperatura": {"type": "Number", "value": 55}, "cloro": {"type": "Number", "value": 31}
+    }, "Temperatura": {"type": "Number", "value": 55}, "cloro": {"type": "Number", "value": 31}
   }'
