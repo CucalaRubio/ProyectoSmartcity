@@ -62,8 +62,8 @@ curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application
 
 
 **Suscripción**
-curl -X POST http://localhost:1026/v2/subscriptions \
-  -H "Content-Type: application/json" \
+
+curl -X POST http://localhost:1026/v2/subscriptions -H "Content-Type: application/json" \
   -d '{
     "description": "Suscripción a sensores con metadata.timestamp",
     "subject": {
