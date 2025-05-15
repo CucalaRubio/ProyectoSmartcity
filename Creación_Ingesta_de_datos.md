@@ -1,44 +1,43 @@
 ```python
-
 import requests
-import datetime
-import random
+from datetime import datetime, timedelta
 
-HEADERS = {
-    "Content-Type": "application/json",
-    "Fiware-Service": "smartcity",
-    "Fiware-ServicePath": "/"
+ORION_URL = "http://localhost:1026/v2/entities"
+HEADERS = {"Content-Type": "application/json"}
+
+# Sensores y sus atributos
+entities = {
+    "sensor001": ["Temperatura", "humidity"],
+    "sensor002": ["CO2"],
+    "sensor003": ["Ph", "Temperatura", "cloro"]
 }
 
-URL = "http://localhost:1026/v2/entities/{}/attrs"
+# Fechas
+start_date = datetime(2025, 3, 1)
+end_date = datetime(2025, 4, 30)
+total_points = 400
+interval = (end_date - start_date) / total_points  # tiempo entre cada punto
 
-def send_value(entity_id, attr_name, value):
-    payload = {
-        attr_name: {
-            "value": value,
-            "type": "Number"
-        }
-    }
-    r = requests.post(URL.format(entity_id), json=payload, headers=HEADERS)
-    if not r.ok:
-        print(f"Error [{r.status_code}]: {r.text}")
+for entity_id, attributes in entities.items():
+    timestamp = start_date
+    for i in range(total_points):
+        data = {}
+        for attr in attributes:
+            value = 10 + (i % 50)  # valor de ejemplo: entre 10 y 59
+            data[attr] = {
+                "type": "Number",
+                "value": value,
+                "metadata": {
+                    "timestamp": {
+                        "type": "DateTime",
+                        "value": timestamp.isoformat() + "Z"
+                    }
+                }
+            }
 
-start = datetime.datetime(2025, 3, 1)
-end = datetime.datetime(2025, 4, 30)
-delta = (end - start) / 400
+        url = f"{ORION_URL}/{entity_id}/attrs"
+        response = requests.post(url, headers=HEADERS, json=data)
+        print(f"{entity_id} | Registro {i+1}/{total_points} | Status: {response.status_code}")
+        timestamp += interval
 
-for i in range(400):
-    ts = start + i * delta
-
-    # Sensor 001: humedad y temperatura
-    send_value("sensor001", "humidity", round(random.uniform(30, 70), 2))
-    send_value("sensor001", "temperatura", round(random.uniform(20, 40), 2))
-
-    # Sensor 002: CO2
-    send_value("sensor002", "C02", round(random.uniform(300, 600), 2))
-
-    # Sensor 003: Ph, cloro, temperatura
-    send_value("sensor003", "Ph", round(random.uniform(6.5, 8.5), 2))
-    send_value("sensor003", "cloro", round(random.uniform(0.5, 3.0), 2))
-    send_value("sensor003", "temperatura", round(random.uniform(20, 35), 2))
 ```
