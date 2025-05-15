@@ -50,7 +50,7 @@ curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application
 curl -X POST http://localhost:1026/v2/subscriptions \
   -H "Content-Type: application/json" \
   -d '{
-    "description": "Suscripción a cambios en sensores",
+    "description": "Suscripción a cambios en sensores con atributo Time",
     "subject": {
       "entities": [
         {
@@ -63,11 +63,10 @@ curl -X POST http://localhost:1026/v2/subscriptions \
       "http": {
         "url": "http://quantumleap:8668/v2/notify"
       },
-      "attrs": [
-        "Temperatura", "humidity", "CO2", "Ph", "cloro"
-      ],
-      "metadata": ["dateCreated", "dateModified", "timestamp", "Time"]
+      "attrs": ["Temperatura", "humidity", "CO2", "Ph", "cloro", "Time"]
     },
     "throttling": 1
   }'
+
+
 
