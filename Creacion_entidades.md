@@ -16,7 +16,7 @@ curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/jso
 curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application/json'   -d '{
   "id": "sensor002",
   "type": "Sensor",
-  "C02": {
+  "CO2": {
     "value": 55,
     "type": "Number"
   },
@@ -66,7 +66,7 @@ curl -X POST http://localhost:1026/v2/subscriptions \
       "attrs": [
         "Temperatura", "humidity", "CO2", "Ph", "cloro"
       ],
-      "metadata": ["dateCreated", "dateModified", "timestamp"]
+      "metadata": ["dateCreated", "dateModified", "timestamp", "Time"]
     },
     "throttling": 1
   }'
