@@ -21,8 +21,7 @@ curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/jso
   }'
 
 
-""""""""
-*Suscripción
+#Suscripción
 
 curl -X POST http://localhost:1026/v2/subscriptions \
   -H "Content-Type: application/json" \
