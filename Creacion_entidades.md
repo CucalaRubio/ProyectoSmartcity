@@ -1,21 +1,28 @@
-curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/json' -d '{"id": "sensor001", "type": "Sensor", "humidity": { "value": 55, "type": "Number", "metadata": {
-    "timestamp": {
-      "type": "DateTime",
-      "value": "2025-05-15T13:00:00Z"
-    }
-  } }, "Temperatura": { "type": "Number", "value": 30, "metadata": {
-    "timestamp": {
-      "type": "DateTime",
-      "value": "2025-05-15T13:00:00Z"
-        }
-      } 
+curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/json' -d '{"id": "sensor001", "type": "SensorTemperaturas", 
+    "humidity": { 
+        "value": 55, "type": "Number", 
+        "metadata": {
+            "timestamp": {
+              "type": "DateTime",
+              "value": "2025-05-15T13:00:00Z"
+                }
+            } 
+        }, 
+    "Temperatura": { 
+        "type": "Number", "value": 30, 
+        "metadata": {
+            "timestamp": {
+              "type": "DateTime",
+              "value": "2025-05-15T13:00:00Z"
+                }
+          } 
     } 
 }'
 
 
 curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application/json'   -d '{
   "id": "sensor002",
-  "type": "Sensor",
+  "type": "SensorCO2",
   "CO2": {
     "value": 55,
     "type": "Number", "metadata": {
@@ -29,7 +36,7 @@ curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application
 
 curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application/json'   -d '{
   "id": "sensor003",
-  "type": "Sensor",
+  "type": "SensorQualityWater",
   "Ph": {
     "value": 20,
     "type": "Number", "metadata": {
