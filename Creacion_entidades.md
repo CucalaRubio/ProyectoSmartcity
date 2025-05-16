@@ -4,7 +4,7 @@ curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/jso
         "metadata": {
             "timestamp": {
               "type": "DateTime",
-              "value": "2025-05-15T13:00:00Z"
+              "value": "2025-03-1T13:00:00Z"
                 }
             } 
         }, 
@@ -13,7 +13,7 @@ curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/jso
         "metadata": {
             "timestamp": {
               "type": "DateTime",
-              "value": "2025-05-15T13:00:00Z"
+              "value": "2025-03-1T13:00:00Z"
                 }
           } 
     } 
@@ -28,7 +28,7 @@ curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application
     "type": "Number", "metadata": {
     "timestamp": {
       "type": "DateTime",
-      "value": "2025-05-15T13:00:00Z"
+      "value": "2025-03-1T13:00:00Z"
         }
       }
   } 
@@ -42,7 +42,7 @@ curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application
     "type": "Number", "metadata": {
     "timestamp": {
       "type": "DateTime",
-      "value": "2025-05-15T13:00:00Z"
+      "value": "2025-03-1T13:00:00Z"
     }
   }
   }, 
@@ -51,7 +51,7 @@ curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application
     "value": 55, "metadata": {
     "timestamp": {
       "type": "DateTime",
-      "value": "2025-05-15T13:00:00Z"
+      "value": "2025-03-1T13:00:00Z"
     }
   }
   }, 
@@ -61,7 +61,7 @@ curl -X POST   http://localhost:1026/v2/entities   -H 'Content-Type: application
     "metadata": {
         "timestamp": {
           "type": "DateTime",
-          "value": "2025-05-15T13:00:00Z"
+          "value": "2025-03-1T13:00:00Z"
         }
       }
   }
