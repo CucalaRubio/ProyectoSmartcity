@@ -65,11 +65,17 @@ Este repositorio incluye un documento explicativo que detalla:
 ---
 
 ## 📁 Estructura del Proyecto
+
 ├── data/ # Scripts y archivos de generación de datos
+
 ├── etl/ # Código de la ETL
+
 ├── grafana/ # Configuración del dashboard
+
 ├── powerbi/ # Reportes y visualizaciones en Power BI
+
 ├── docs/ # Documentación técnica y de diseño
+
 └── README.md # Este archivo
 
 
