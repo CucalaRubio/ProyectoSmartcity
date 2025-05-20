@@ -38,7 +38,7 @@ for entity_id, attributes in entities.items():
         response = requests.post(url, headers=HEADERS, json=data)
         print(f"{entity_id} | Registro {i+1}/{total_points} | Status: {response.status_code}")
 
-        time.sleep(5)  # 🕐 espera de 50ms (ajustable)
+        time.sleep(2.5)  # 🕐 espera de 50ms (ajustable)
         timestamp += interval
 
 ```
