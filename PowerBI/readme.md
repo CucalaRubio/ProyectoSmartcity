@@ -9,13 +9,13 @@ El dashboard muestra información sobre las mediciones de temperatura registrada
 ### Componentes del Dashboard:
 
 - **KPI Principal (Parte superior):**
-  - **Suma de máximos:** Muestra la suma total de los valores máximos de temperatura registrados por los sensores seleccionados.
+  - **Suma de máximos:** Muestra la suma total de los valores máximos de los atributos registrados por los sensores seleccionados.
 
 - **Gráfico de Barras (Izquierda):**
-  - **Suma de mínimos por sensor y atributo:** Compara la suma de los valores mínimos de temperatura registrados por cada sensor (`sensor001`, `sensor003`).
+  - **Suma de mínimos por sensor y atributo:** Compara la suma de los valores mínimos de los atributos registrados por cada sensor (`sensor001`, `sensor002`, `sensor003`). En el caso de la imagen son los sensores001 y senores003
 
 - **Gráfico de Líneas (Derecha):**
-  - **Histórico de mediciones:** Muestra la evolución de las mediciones medias de temperatura por sensor a lo largo del tiempo (marzo y abril de 2025).
+  - **Histórico de mediciones:** Muestra la evolución de las mediciones medias de los atributos por sensor a lo largo del tiempo (marzo y abril de 2025).
 
 - **Filtros:**
   - **Medidas:** Permite seleccionar el tipo de medida a visualizar (actualmente se muestra "temperatura").
