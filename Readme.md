@@ -28,14 +28,12 @@ Se han generado 400 datos por atributo, por cada entidad, dentro del rango de fe
 Se ha diseñado un panel de control interactivo con las siguientes características:
 
 - ✅ **4 visualizaciones** representando diferentes atributos o KPIs
-- 🎚️ **1 variable** para filtrar dinámicamente las visualizaciones
-- 🚨 **1 alerta** configurada para dispararse en condiciones críticas
-
+- 🎚️ **1 variable** para filtrar dinámicamente las visualizaciones (1 variable por visualización)
 ---
 
 ## 🔁 Proceso ETL y Almacenamiento
 
-Una ETL personalizada ha sido desarrollada para calcular y almacenar en el Data Warehouse los siguientes valores por día y por atributo:
+Una ETL personalizada ha sido desarrollada para calcular y almacenar en un .csv los siguientes valores por día y por atributo:
 
 - 📈 Valor **máximo** del día  
 - 📉 Valor **mínimo** del día  
