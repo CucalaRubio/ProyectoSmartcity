@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto tiene como objetivo el diseño e implementación de un sistema completo de adquisición, visualización, procesamiento y análisis de datos de sensores IoT. Incluye suscripción a entidades, generación de datos, paneles de control en **Grafana** y **Power BI**, y una ETL para alimentar un **Data Warehouse**.
+Este proyecto tiene como objetivo el diseño e implementación de un sistema completo de adquisición, visualización, procesamiento y análisis de datos de sensores IoT. Incluye suscripción a entidades, generación de datos, paneles de control en **Grafana** y **Power BI**, y una ETL para alimentar un **Data Warehouse** (En mi caso he utilizado un archivo .csv).
 
 ---
 
