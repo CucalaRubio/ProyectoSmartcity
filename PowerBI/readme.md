@@ -32,7 +32,7 @@ Los datos utilizados provienen de sensores identificados como `sensor001` y `sen
 
 ## 🚀 Objetivos
 
-- Monitorizar la temperatura medida por distintos sensores.
+- Monitorizar los diferentes atributos medidos por distintos sensores.
 - Comparar tendencias y comportamientos por sensor.
 - Identificar patrones y posibles anomalías en las mediciones.
 
