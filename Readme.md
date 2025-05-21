@@ -45,7 +45,7 @@ Una ETL personalizada ha sido desarrollada para calcular y almacenar en un .csv 
 
 Se ha creado un dashboard con:
 
-- 📊 **2 visualizaciones** relevantes de tendencias y KPIs
+- 📊 **2 visualizaciones** relevantes de tendencias y KPIs (En mi caso he creado 3 visualizaciones)
 - 🧮 **2 filtros** para explorar los datos por fechas y entidades
 
 ---
@@ -84,7 +84,5 @@ Este repositorio incluye un documento explicativo que detalla:
 - **Grafana** para visualización en tiempo real
 - **Power BI** para análisis de negocio
 - **Python** para la ETL y generación de datos
-- **SQL / Data Warehouse** para almacenamiento analítico
-- **NGSI-LD / IoT Broker** para suscripciones
-
+- **SQL** para almacenamiento analítico
 ---
