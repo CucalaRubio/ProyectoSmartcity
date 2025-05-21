@@ -72,8 +72,6 @@ Este repositorio incluye un documento explicativo que detalla:
 
 ├── powerbi/ # Reportes y visualizaciones en Power BI
 
-├── docs/ # Documentación técnica y de diseño
-
 └── README.md # Este archivo
 
 
