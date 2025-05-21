@@ -1,4 +1,4 @@
-# README - Orion Context Broker: Entidades y Suscripciones
+# Orion Context Broker: Entidades y Suscripciones
 
 Este README proporciona los comandos `curl` necesarios para registrar entidades y crear suscripciones en **Orion Context Broker**. Estos datos pueden ser utilizados por otras componentes como **QuantumLeap** para análisis históricos y visualización.
 
@@ -9,10 +9,6 @@ Este README proporciona los comandos `curl` necesarios para registrar entidades 
 ---
 
 ## 📦 1. Creación de Entidades
-
-### 🧭 ¿Qué es una entidad?
-
-Una **entidad** en Orion representa un objeto del mundo real o lógico. Cada entidad tiene un `id`, un `type` y varios atributos como temperatura, humedad, etc.
 
 ### 🌡️ Sensor 001 - Temperatura y Humedad
 
@@ -105,9 +101,6 @@ curl -X POST http://localhost:1026/v2/entities -H 'Content-Type: application/jso
 
 ## 🔔 2. Suscripciones
 
-### 🧭 ¿Qué es una suscripción?
-
-Una **suscripción** permite recibir notificaciones (push) cuando cambian ciertos atributos de una entidad. Las notificaciones se envían a una URL definida, como la de QuantumLeap.
 
 > Las suscripciones incluyen:
 > - `subject`: qué entidades observar
@@ -193,15 +186,4 @@ Y las suscripciones activas con:
 
 ```bash
 curl http://localhost:1026/v2/subscriptions
-```
-
----
-
-## 🧪 Notas finales
-
-- La metadata `timestamp` permite guardar registros temporales para análisis históricos.
-- `QuantumLeap` es compatible con esta estructura y almacenará las observaciones si está correctamente enlazado con `CrateDB` o `TimescaleDB`.
-
-```bash
-# Fin del README
 ```
