@@ -34,7 +34,7 @@ A continuación, se listan las principales tablas utilizadas:
 
 - Cada tabla contiene **400 registros**, simulados en el rango de fechas del **01/03/2025 al 30/04/2025**.
 - Todas las tablas están fragmentadas en **4 shards** con **2 réplicas** para alta disponibilidad.
-- Datos insertados a través de un proceso automatizado (ETL o simulador de datos).
+- Datos insertados a través de un script.
 
 ![Dashboard Preview](Captura%20desde%202025-05-20%2023-12-54.png)
 
